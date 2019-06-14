@@ -1,0 +1,121 @@
+1.0.0 - Feb 21, 2016
+-- sqlite now uses rowids to avoid "achilles heel" problem
+-- fixed bug where people using callbacks would not be informed of errors
+-- populating from existing data now allows specifying column_name
+-- bumped to 1.0.0 due to deciding this module is feature complete and stable
+
+0.13.0 - Feb 9, 2016
+-- Upgraded all dependent modules
+
+0.12.0 - Jan 30, 2016
+-- Added ability to resolve foreign keys from existing data
+
+0.11.0 - June 14th, 2015
+-- Added ability to pass an existing knex instance into sql-fixtures
+
+0.10.2 - June 14th, 2015
+-- fix for issue #31 where tables with date columns were not being retrieved
+properly in insertRecordsSerially()
+
+0.10.1 - April 26, 2015
+-- more accurate detection of postgres. Some postgres users were falsely
+detected, causing them to go into serial mode when it wasn't needed
+
+0.10.0 - April 26, 2015
+-- Since everything got confusing with 0.9.0 and 0.9.3, just bumping a new
+release to get past the confusion.
+
+0.9.0 - March 29, 2015
+-- added showWarning option to allow suppressing the no primary key warning.
+
+0.8.3 - Feb 3, 2015
+-- Fix for isPostgres(). It wasn't accounting for connection strings versus objects.
+
+0.8.2 - Jan 31, 2015
+-- hopefully more robust fix for the MySQL bug 0.8.1 tried to address (#22)
+
+0.8.1 - Jan 29, 2015
+-- added "order by id" for retrieving inserted records for mysql, fixes issue #22
+
+0.8.0 - Jan 7, 2015
+-- added documentation website
+
+0.7.0 - Dec 26, 2014
+-- added integration tests for MariaDB
+
+0.6.0 - Dec 10, 2014
+-- added experimental support for "unique" (see README)
+
+0.5.0 - Dec 1, 2014
+-- added support for Postgres array columns
+
+0.4.2 - Dec 1, 2014
+-- Postgres now inserts in bulk again for a nice speed up. MySQL and Sqlite also insert in bulk now, but they must then serially query the database to retrieve what was inserted.
+-- clean up: integration tests are cleaner, and use more generic/test appropriate database tables
+
+0.4.1 - Oct 31, 2014
+-- Before MySQL and sqlite worked (< 0.3.0), inserts were done in bulk, and that meant primary keys ascended in a predictable manner.
+   From 0.3.0 on, inserts were done one at a time and in parallel, removing the predictable id ordering. 0.4.1 changes it to
+   insert records serially to bring back that predictable ordering at the cost of sql-fixtures being slightly slower.
+
+0.4.0 - Oct 30, 2014
+-- Added integration tests for MySQL
+
+0.3.1 - Oct 27, 2014
+-- Tiny branch depending on db dialect, keeps postgres rock solid and does the best it can with other dbs
+   (basically postgres will return what got inserted, mysql/sqlite/etc do not, so have to make a slight guess with those dbs)
+
+0.3.0 - Oct 27, 2014
+-- Added integration tests for sqlite, feeling pretty good about sqlite support
+
+0.2.2 - Oct 23, 2014
+-- bug fix: allowing more than one instance of sqlFixtures to get generated
+
+0.2.1 - Oct 22, 2014
+-- bug fix: only cloning what is being mutated, so knex raw objects don't get wiped out
+
+0.2.0 - Oct 21, 2014
+-- the only columns returned in the result are those that are specified
+
+0.1.10 - Oct 20, 2014
+-- Added alias for disconnect over to destroy, to maintain backwards compatibility
+   0.1.9 lacked disconnect, it got renamed to destroy.
+
+0.1.9 - Oct 20, 2014
+-- sql-fixtures can now be instantiated if need be, and also used same as before (see README for more info)
+
+0.1.8 - Oct 16, 2014
+-- The inserts into the database now return all columns, enabling many-to-many and auto-populated columns to work
+
+0.1.7 - Oct 16, 2014
+-- Fixed some minor bugs that creeped in during 0.1.6
+
+0.1.6 - Oct 16, 2014
+-- fixed issue #5, where complex dependencies could result in records changing position in the final result
+
+0.1.5 - Oct 11, 2014
+-- Cleaned up the npm package, removing all tests and vagrant stuff
+
+0.1.4 - Oct 10, 2014
+-- escaping colons with '::'
+
+0.1.3 - Oct 3, 2014
+-- Bug fix for same types at different priorities not resolving
+
+0.1.2 - Oct 2, 2014
+-- Better error output if a dedendency cannot be resolved
+
+0.1.1 - Sept 30, 2014
+-- Fixed the README for specIds
+
+0.1.0 - Sept 30, 2014
+-- support for specIds
+
+0.0.2 - Sept 29, 2014
+-- Improved README
+
+0.0.1 - Sept 26, 2014
+-- bug fix: Cloning the passed in data spec so as to not alter the original
+
+0.0.0 - Sept 26, 2014
+-- original release

@@ -1,0 +1,53 @@
+{
+  "name": "sql-fixtures",
+  "version": "1.0.0",
+  "description": "Populate a SQL database with fixture data",
+  "main": "index.js",
+  "scripts": {
+    "test": "fig up"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG"
+  ],
+  "keywords": [
+    "fixtures",
+    "sql",
+    "postgres",
+    "sqlite",
+    "mysql",
+    "testing",
+    "dummy",
+    "data"
+  ],
+  "author": "Matt Greer <matt.e.greer@gmail.com> (http://www.mattgreer.org/)",
+  "contributors": [
+    "Blaine Bublitz <blaine@iceddev.com> (http://iceddev.com/)"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "3.2.2",
+    "knex": "0.9.0",
+    "lodash": "4.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/city41/node-sql-fixtures.git"
+  },
+  "homepage": "https://github.com/city41/node-sql-fixtures",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-as-promised": "^4.1.1",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.8.5",
+    "gulp-mocha": "^2.1.0",
+    "gulp-shell": "^0.2.9",
+    "mocha": "^1.21.4",
+    "mysql": "^2.5.2",
+    "pg": "^4.4.4",
+    "sqlite3": "^3.0.5"
+  }
+}
