@@ -1,6 +1,6 @@
 {
   "name": "sql-fixtures",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Populate a SQL database with fixture data",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "3.2.2",
-    "knex": "^0.15.0",
+    "knex": "^2.4.2",
     "lodash": "^4.17.11"
   },
   "repository": {
@@ -47,7 +47,7 @@
     "gulp-shell": "^0.2.9",
     "mocha": "^1.21.4",
     "mysql": "^2.5.2",
-    "pg": "^4.4.4",
-    "sqlite3": "^3.0.5"
+    "pg": "^8.0.0",
+    "sqlite3": "^4.1.2"
   }
 }
